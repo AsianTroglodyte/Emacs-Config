@@ -46,6 +46,7 @@
 ;; UI Improvements
 (column-number-mode)
 (global-display-line-numbers-mode)
+(tool-bar-mode -1)
 
 ;; eisable lin numbers for some modes
 (dolist (mode '(term-mode-hook
