@@ -29,16 +29,26 @@
   :ensure t)
 
 (use-package org-roam
-  :ensure)
+  :ensure t)
+
+;; Strongly consider remapping transpose keybinding to drag-stuff line
+(use-package drag-stuff
+  :ensure t)
+
+(drag-stuff-global-mode -1)
+
+(global-set-key (kbd "M-<up>") 'drag-stuff-up)
+(global-set-key (kbd "M-<down>") 'drag-stuff-down)
 
 (use-package dirvish
   :ensure t)
+
 ;; shorter other window keybinding
 (global-set-key (kbd "M-o") 'other-window) 
 ;; ace-window for tied to M-o
 (global-set-key (kbd "M-o") 'ace-window)
 
-(setq w32-recognize-altgr nil)
+(setq w32-rceognize-altgr nil)
 (setq inhibit-startup-screen t)
 (setq display-line-numbers-type 'relative)
 (setq mouse-drag-and-drop-region t)
@@ -47,7 +57,7 @@
 (global-display-line-numbers-mode)
 (column-number-mode)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 
 ;; disable line numbers for some modes
 (dolist (mode '(term-mode-hook
@@ -57,16 +67,10 @@
 ;; Theme settings
 ;;; -*- lexical-binding: t -*-
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(leuven-dark))
  '(package-selected-packages
-   '(ace-window dirvish ivy lsp-mode magit magit-find-file vdiff-magit)))
+   '(ace-window dirvish drag-stuff ivy lsp-mode magit magit-find-file
+		vdiff-magit)))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+
  )
