@@ -43,6 +43,10 @@
 (use-package dirvish
   :ensure t)
 
+;; auto-fill-mode for org files
+(setq-default fill-column 75) ;; or any number you prefer
+(add-hook 'org-mode-hook #'auto-fill-mode)
+
 ;; shorter other window keybinding
 (global-set-key (kbd "M-o") 'other-window) 
 ;; ace-window for tied to M-o
@@ -52,6 +56,7 @@
 (setq inhibit-startup-screen t)
 (setq display-line-numbers-type 'relative)
 (setq mouse-drag-and-drop-region t)
+(setq python-shell-interpreter "py")
 
 ;; UI Improvements
 (global-display-line-numbers-mode)
@@ -69,8 +74,12 @@
 (custom-set-variables
  '(custom-enabled-themes '(leuven-dark))
  '(package-selected-packages
-   '(ace-window dirvish drag-stuff ivy lsp-mode magit magit-find-file
-		vdiff-magit)))
-(custom-set-faces
-
- )
+   '(ace-window
+     dirvish
+     drag-stuff
+     ivy
+     lsp-mode
+     magit
+     magit-find-file
+     vdiff-magit)))
+(custom-set-faces)
