@@ -53,10 +53,11 @@
 (global-set-key (kbd "M-o") 'ace-window)
 
 (setq w32-rceognize-altgr nil)
-(setq inhibit-startup-screen t)
+(setq inhibit-startup-screen nil)
 (setq display-line-numbers-type 'relative)
 (setq mouse-drag-and-drop-region t)
 (setq python-shell-interpreter "py")
+(setq dired-dwim-target t)
 
 ;; UI Improvements
 (global-display-line-numbers-mode)
@@ -72,14 +73,17 @@
 ;; Theme settings
 ;;; -*- lexical-binding: t -*-
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(leuven-dark))
  '(package-selected-packages
-   '(ace-window
-     dirvish
-     drag-stuff
-     ivy
-     lsp-mode
-     magit
-     magit-find-file
-     vdiff-magit)))
-(custom-set-faces)
+   '(ace-window dirvish drag-stuff ivy lsp-mode magit magit-find-file
+		powershell typescript-mode vdiff-magit zzz-to-char)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
